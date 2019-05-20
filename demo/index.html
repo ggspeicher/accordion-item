@@ -21,7 +21,7 @@
     </custom-style>
   </head>
   <body>
-    <div class="vertical-section-container centered">
+      <div class="vertical-section-container centered">
       <h3>Basic accordion-item demo</h3>
       <demo-snippet>
 
@@ -39,6 +39,34 @@
             }
             </style>
           <accordion-item>
+            <h2>Test</h2>
+            <p>This is a test for the slot</p>
+            </accordion-item>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Custom accordion-item demo</h3>
+      <demo-snippet>
+
+        <template>
+          <style>
+            :host {
+              --accordion-item-panel: {
+                  background-color: pink;
+              }
+            }
+
+            accordion-item {
+              --accordion-panel-bg-color: pink;
+
+            }
+            </style>
+          <accordion-item>
+            <div slot="icon" style=" display: inline; padding: 10px; background-color: cyan;">
+              <span>GET</span>
+            </div>
             <h2>Test</h2>
             <p>This is a test for the slot</p>
             </accordion-item>

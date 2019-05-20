@@ -19,7 +19,8 @@ class AccordionItem extends PolymerElement {
         :host {
           display: block;
           margin: 0px;
-          padding: 0px;        
+          padding: 0px;
+          border: 4px solid green;
         }
 
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -28,19 +29,30 @@ class AccordionItem extends PolymerElement {
         }
 
         .accordion {
+          display: block;
           background-color: #eee;
           color: #444;
           cursor: pointer;
           padding: 18px;
-          width: 100%;
+          left: 0px;
+          right: 0px;
+          vertical-align: middle;
           text-align: left;
           border: none;
           outline: none;
           transition: 0.4s;
         }
 
+        .icon-image {
+          display: inline;
+          margin-right: 10px;
+        }
+
         .panel {
           padding: 0 18px;
+          left: 0px;
+          right: 0px;
+
           background-color: white;
           display: block;
           overflow: hidden;
@@ -56,10 +68,15 @@ class AccordionItem extends PolymerElement {
         }
 
       </style>
-      <button class="accordion" onclick="[[_togglePanel()]]">[[title]]</button>
-      <div id="panel" class$="[[_classes]]" style$="max-height: [[_panelHeight]]">
-        <slot></slot>
-      </div>
+        <div class="accordion" onclick="[[_togglePanel()]]">
+          <div class="icon-image">
+            <slot name="icon"></slot>
+          </div>
+            <span>[[title]]</span>
+        </div>
+        <div id="panel" class$="[[_classes]]" style$="max-height: [[_panelHeight]]">
+          <slot></slot>
+        </div>
     `;
   }
   static get properties() {
