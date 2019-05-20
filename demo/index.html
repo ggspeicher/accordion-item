@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>accordion-item demo</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+    </script>
+
+    <script type="module" src="../accordion-item.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic accordion-item demo</h3>
+      <demo-snippet>
+
+        <template>
+          <style>
+            :host {
+              --accordion-item-panel: {
+                  background-color: pink;
+              }
+            }
+
+            accordion-item {
+              --accordion-panel-bg-color: pink;
+
+            }
+            </style>
+          <accordion-item>
+            <h2>Test</h2>
+            <p>This is a test for the slot</p>
+            </accordion-item>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
