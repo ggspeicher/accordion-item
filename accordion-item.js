@@ -20,6 +20,8 @@ class AccordionItem extends PolymerElement {
           display: block;
           margin: 0px;
           padding: 0px;
+
+          @apply --accordion-item-main;
         }
 
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
