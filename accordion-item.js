@@ -21,7 +21,6 @@ class AccordionItem extends PolymerElement {
           margin: 0px;
           padding: 0px;
 
-          @apply --accordion-item-main;
         }
 
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -34,7 +33,8 @@ class AccordionItem extends PolymerElement {
           background-color: #eee;
           color: #444;
           cursor: pointer;
-          padding: 18px;
+          min-height: 50px;
+          padding: 4px 18px;
           left: 0px;
           right: 0px;
           vertical-align: middle;
@@ -42,6 +42,8 @@ class AccordionItem extends PolymerElement {
           border: none;
           outline: none;
           transition: 0.4s;
+
+          @apply --accordion-item-button;
         }
 
         .icon-image {
