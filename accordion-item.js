@@ -20,7 +20,7 @@ class AccordionItem extends PolymerElement {
           display: block;
           margin: 0px;
           padding: 0px;
-
+          
         }
 
         /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -30,11 +30,11 @@ class AccordionItem extends PolymerElement {
 
         .accordion {
           display: block;
+          position: relative;
           background-color: #eee;
           color: #444;
           cursor: pointer;
-          min-height: 40px;
-          padding: 4px 18px;
+          padding: 7px;
           left: 0px;
           right: 0px;
           vertical-align: middle;
@@ -47,10 +47,16 @@ class AccordionItem extends PolymerElement {
         }
 
         .icon-image {
-          display: inline;
+          display: inline-block;
           margin-right: 10px;
+          vertical-align: middle;
+          overflow: visible;
         }
-
+        .text-space {
+          display: inline-block; 
+          vertical-align: middle;
+          overflow: visible;
+        }
         .panel {
           padding: 0 18px;
           left: 0px;
@@ -70,12 +76,29 @@ class AccordionItem extends PolymerElement {
          /* overflow: auto;*/
         }
 
+        .title {
+          display:block;
+          color: black;
+        }
+
+        .subtitle {
+          display:block;
+          color: grey;
+          font-size: 0.5 rem;
+        }
+
       </style>
         <div class="accordion" onclick="[[_togglePanel()]]">
+          
           <div class="icon-image">
             <slot name="icon"></slot>
           </div>
-            <span>[[title]]</span>
+
+          <div class="text-space">
+            <span class="title">[[title]]</span>
+            <span class="subtitle">[[subtitle]] </span>
+          </div>
+            
         </div>
         <div id="panel" class$="[[_classes]]" style$="max-height: [[_panelHeight]]">
           <slot></slot>
@@ -90,6 +113,10 @@ class AccordionItem extends PolymerElement {
       title: {
         type: String,
         value: "title"
+      },
+      subtitle: {
+        type: String,
+        value: ' '
       },
       /**
        * @type {Boolean} Flag que interpreta si el accordeon se encuentra abierto
