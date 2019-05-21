@@ -33,7 +33,7 @@ class AccordionItem extends PolymerElement {
           background-color: #eee;
           color: #444;
           cursor: pointer;
-          min-height: 50px;
+          min-height: 40px;
           padding: 4px 18px;
           left: 0px;
           right: 0px;
